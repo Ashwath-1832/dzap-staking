@@ -48,6 +48,21 @@
   transition: 0.3s;
   border: none;
 }
+.connected {
+  display: flex;
+  background-color: #6d35d0;
+  gap: 6px;
+  padding-right: 20px;
+  padding-left: 20px;
+  align-items: center;
+  border-radius: 10px;
+  color: #ffffffcc;
+  font-weight: 500;
+  font-size: 15px;
+  transition: 0.3s;
+  border: none;
+  height: 45px;
+}
 
 .detailsContainer {
   height: fit-content;

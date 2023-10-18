@@ -5,6 +5,7 @@ import MMlogo from "./assets/MetaMask.svg";
 import Buttons from "./components/Buttons";
 import { getStakedUserData } from "./utils/getStakedData";
 import { useAccount } from "wagmi";
+import { claim } from "./utils/claimrewards";
 
 function Rewards() {
   const { address } = useAccount();
@@ -18,6 +19,10 @@ function Rewards() {
   useEffect(() => {
     stakedDataFn();
   }, []);
+
+  const OnRewardsClick = () => {
+    claim();
+  };
 
   return (
     <div className="rewardsContainer">
@@ -34,7 +39,11 @@ function Rewards() {
           Total Rewards Claimed: {stakedData?.totalRewardsClaimed || 0} MPEL{" "}
           <img src={MMlogo} alt="logo" className="mmLogo" />
         </div>
-        <Buttons label="Claim Rewards" className="rewardsBtn" />
+        <Buttons
+          label="Claim Rewards"
+          className="rewardsBtn"
+          onClick={OnRewardsClick}
+        />
       </div>
     </div>
   );

@@ -290,9 +290,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type="number"] {
-  -moz-appearance: textfield;
-}
 .stakingLogo {
   height: 40px;
   width: 40px;

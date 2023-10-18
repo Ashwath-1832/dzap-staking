@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import maticLogo from "./assets/maticLogo.png";
 import StakeInfo from "./components/StakeInfo";
 import Buttons from "./components/Buttons";
-import { STAKING_CONTRACT_ADDRESS, TOKEN_ADDRESS } from "./constants";
-import { ethers, formatEther, parseEther } from "ethers";
-import { getSigner } from "./utils/signer";
 import { useAccount } from "wagmi";
 import { getStakedUserData } from "./utils/getStakedData";
 import { getTokenBalance } from "./utils/getBalance";
@@ -50,7 +47,7 @@ function Funds() {
     <div className="fundsContainer">
       <div className="fundsSection">
         <div>
-          <img src={maticLogo} className="tokenIcon" />
+          <img src={maticLogo} alt="logo" className="tokenIcon" />
         </div>
         <StakeInfo
           title="My Funds"

@@ -1,6 +1,6 @@
 import React from "react";
 
-function StakeInfo({ title, subTitle, amount, className }) {
+function StakeInfo({ title, subTitle, amount }) {
   return (
     <div className="stakeInfoContainer">
       <div className="stakeTitle">{title}</div>

@@ -23,7 +23,7 @@ function Rewards() {
     <div className="rewardsContainer">
       <div className="rewardsSection">
         <div>
-          <img src={maticLogo} className="tokenIcon" />
+          <img src={maticLogo} alt="logo" className="tokenIcon" />
         </div>
         <StakeInfo
           title="My Rewards"

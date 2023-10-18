@@ -5,6 +5,7 @@ import App from "./App";
 import { configureChains, WagmiConfig, createConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 import { polygonMumbai } from "wagmi/chains";
+import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 
 const { provider, webSocketProvider } = configureChains(
   [polygonMumbai],

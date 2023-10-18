@@ -4,12 +4,12 @@ import Details from "./Details";
 import Funds from "./Funds";
 import Rewards from "./Rewards";
 import { useConnect, useAccount } from "wagmi";
-import { MetaMaskConnector } from "wagmi/connectors/metaMask";
+import { InjectedConnector } from "wagmi/connectors/injected";
 
 function App() {
   const { address, isConnected } = useAccount();
   const { connect } = useConnect({
-    connector: new MetaMaskConnector(),
+    connector: new InjectedConnector(),
   });
 
   return (

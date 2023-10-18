@@ -8,11 +8,20 @@ import { getSigner } from "./utils/signer";
 import { useAccount } from "wagmi";
 import { getStakedUserData } from "./utils/getStakedData";
 import { getTokenBalance } from "./utils/getBalance";
+import { stakeContractCall } from "./utils/stake";
+import { unstake } from "./utils/unstake";
 
 function Funds() {
   const { address } = useAccount();
   const [stakedData, setStakedData] = useState();
   const [tokenBalance, setTokenBalance] = useState(0);
+  const [inputAmount, setInputAmount] = useState(0);
+
+  const handleChange = (event) => {
+    setInputAmount(event.target.value);
+
+    console.log("amount:", event.target.value);
+  };
 
   async function stakedDataFn() {
     const stakedData = await getStakedUserData(address);
@@ -28,6 +37,14 @@ function Funds() {
     stakedDataFn();
     getBalanceFn();
   }, []);
+
+  const OnStakeClick = () => {
+    stakeContractCall(address, inputAmount);
+  };
+
+  const onUnstakeClick = () => {
+    unstake();
+  };
 
   return (
     <div className="fundsContainer">
@@ -49,11 +66,17 @@ function Funds() {
             type="number"
             className="amountInput"
             placeholder="0.0000"
+            onChange={handleChange}
+            value={inputAmount}
           ></input>
         </div>
         <div className="avlBalance">Availabe: {tokenBalance} MPEL</div>
-        <Buttons label="Stake" />
-        <Buttons label="Unstake" className="stakeOff" />
+        <Buttons label="Stake" onClick={OnStakeClick} />
+        <Buttons
+          label="Unstake"
+          className="stakeOff"
+          onClick={onUnstakeClick}
+        />
       </div>
     </div>
   );

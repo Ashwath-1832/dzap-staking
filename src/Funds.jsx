@@ -40,6 +40,17 @@ function Funds() {
           subTitle="WMatic staked"
           amount={stakedData?.stakedAmount || 0}
         />
+        <div className="stakeFieldContainer">
+          <div className="stakeField">
+            <img src={maticLogo} alt="logo" className="stakingLogo" />
+            WMatic
+          </div>
+          <input
+            type="number"
+            className="amountInput"
+            placeholder="0.0000"
+          ></input>
+        </div>
         <div className="avlBalance">Availabe: {tokenBalance} MPEL</div>
         <Buttons label="Stake" />
         <Buttons label="Unstake" className="stakeOff" />

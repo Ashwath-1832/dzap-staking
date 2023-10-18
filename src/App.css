@@ -234,7 +234,7 @@
   font-size: 15px;
   align-items: center;
   font-weight: 400;
-  margin-top: 6rem;
+  margin-top: 1rem;
 }
 
 .totalRewards {
@@ -275,4 +275,43 @@
 
 .rewardsBtn {
   margin-top: 5px;
+}
+.amountInput {
+  background: none;
+  width: 60px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #dededef7;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.stakingLogo {
+  height: 40px;
+  width: 40px;
+}
+
+.stakeField {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.stakeFieldContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  border-radius: 10px;
+  width: 266px;
+  border: 1px solid #373737;
+  background-color: #3737374d;
+  margin-top: 2rem;
 }
